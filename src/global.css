@@ -1,0 +1,13 @@
+:root {
+    --red-pantone: #e63946ff;
+    --honeydew: #f1faeeff;
+    --non-photo-blue: #a8dadcff;
+    --cerulean: #457b9dff;
+    --berkeley-blue: #1d3557ff;
+
+    --color-background: var(--honeydew);
+    --color-primary: var(--cerulean);
+    --color-secondary: var(--berkeley-blue);
+    --color-error: var(--red-pantone);
+    --color-accent: var(--non-photo-blue);
+}
