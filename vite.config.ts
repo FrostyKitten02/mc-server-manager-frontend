@@ -5,7 +5,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
   plugins: [svelte({
     compilerOptions: {
-      dev: false,
+      // dev: false,
       css: 'external',
       }
   })],
@@ -17,6 +17,7 @@ export default defineConfig({
       output: {
         manualChunks: undefined,
       }
-    }
+    },
+    ssr: false
   }
 })

@@ -2,6 +2,7 @@
     import { Route } from 'tinro';
     import Homepage from "./lib/pages/Homepage.svelte";
     import {authState} from "./lib/stores/authState.js";
+    import ServersPage from "./lib/pages/ServersPage.svelte";
 </script>
 
 <nav>
@@ -21,7 +22,7 @@
         TODO
     </Route>
     <Route path="/servers">
-        TODO
+        <ServersPage />
     </Route>
 </main>
 
