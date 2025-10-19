@@ -3,6 +3,7 @@
     import Homepage from "./lib/pages/Homepage.svelte";
     import {authState} from "./lib/stores/authState.js";
     import ServersPage from "./lib/pages/ServersPage.svelte";
+    import LoginPage from "./lib/pages/LoginPage.svelte";
 </script>
 
 <nav>
@@ -19,7 +20,7 @@
         <Homepage />
     </Route>
     <Route path="/login">
-        TODO
+        <LoginPage />
     </Route>
     <Route path="/servers">
         <ServersPage />
