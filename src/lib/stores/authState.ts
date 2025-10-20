@@ -1,13 +1,32 @@
 import {writable} from "svelte/store";
+import type {JwtPayload} from "jwt-decode";
 
 export interface Session {
-    loggedIn: boolean,
-    user: string
+    loggedIn: boolean
+    jwt?: string,
+    jwtDecoded?: JwtToken
+}
+
+export interface JwtToken extends JwtPayload {
+    user: JwtUser
+}
+
+export interface JwtUser {
+    email?: string,
+    name?: string,
+    firstName?: string,
+    lastName?: string
+}
+
+function isLoggedIn(session: Session): boolean {
+    return !!session?.jwt;
 }
 
 function persistentWritable<T>(key: string, initial: T) {
     const stored = localStorage.getItem(key);
     const data = stored ? JSON.parse(stored) : initial;
+
+    data.loggedIn = isLoggedIn(data)
 
     const store = writable<T>(data);
 
@@ -18,4 +37,5 @@ function persistentWritable<T>(key: string, initial: T) {
     return store;
 }
 
-export const authState = persistentWritable<Session>("session", {loggedIn: false, user: "NONE"})
+
+export const authState = persistentWritable<Session>("session", {loggedIn: false})

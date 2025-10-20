@@ -19,6 +19,7 @@
     "vite": "^7.1.7"
   },
   "dependencies": {
+    "jwt-decode": "^4.0.0",
     "tinro": "^0.6.12"
   }
 }

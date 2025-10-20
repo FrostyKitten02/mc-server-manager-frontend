@@ -4,6 +4,7 @@
     import {authState} from "./lib/stores/authState.js";
     import ServersPage from "./lib/pages/ServersPage.svelte";
     import LoginPage from "./lib/pages/LoginPage.svelte";
+    import LoginCallbackPage from "./lib/pages/LoginCallbackPage.svelte";
 </script>
 
 <nav>
@@ -21,6 +22,9 @@
     </Route>
     <Route path="/login">
         <LoginPage />
+    </Route>
+    <Route path="/login-callback">
+        <LoginCallbackPage />
     </Route>
     <Route path="/servers">
         <ServersPage />
