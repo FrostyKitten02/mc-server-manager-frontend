@@ -9,6 +9,9 @@ export default defineConfig({
       css: 'external',
       }
   })],
+  optimizeDeps: {
+    exclude: ['tinro']
+  },
   build: {
     target: 'esnext',
     minify: 'esbuild',
